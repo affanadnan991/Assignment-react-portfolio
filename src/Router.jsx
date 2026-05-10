@@ -1,5 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { Children } from 'react'
+import { createHashRouter } from 'react-router-dom'
 import App from './App.jsx'
 import Home from './components/Hero.jsx'
 import Skills from './components/Skills.jsx'
@@ -8,7 +7,7 @@ import Experience from './components/Experience.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <App />,
