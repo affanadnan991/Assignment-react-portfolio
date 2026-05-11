@@ -14,15 +14,21 @@ const App = () => {
       <nav className="fixed w-full z-50 glass-card">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <motion.h1
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            className='text-2xl font-bold text-white neon-text'
-            >
-              <motion.p whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>&lt;   </motion.p>
-                &lt;MUHAMMAD AFFAN /&gt;
-              <motion.p whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>   &gt;</motion.p>
-            </motion.h1>
+           <motion.h1
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  className="text-2xl font-bold text-white neon-text flex items-center gap-2"
+>
+  <motion.span whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+    &lt;
+  </motion.span>
+
+  MUHAMMAD AFFAN
+
+  <motion.span whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+    /&gt;
+  </motion.span>
+</motion.h1>
             <div className="hidden md:flex space-x-8">
             <Link to='/' >Home</Link>
             <Link to='/skills' >Skills</Link>
