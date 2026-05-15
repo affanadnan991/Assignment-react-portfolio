@@ -7,6 +7,7 @@ const Hero = () => {
         <div className="absolute inset-0 gradient-bg opacity-20"></div>
         <div className="absolute top-1/4 left-1/4 h-72 w-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-floate"></div>
         <div className="absolute bottom-1/4 right-1/4 h-72 w-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-floate"></div>
+        <div className="container mx-auto px-6 relative z-10"></div>
       </section>
     </div>
   )
