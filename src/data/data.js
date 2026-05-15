@@ -12,7 +12,7 @@ export const portfolioData = {
     {
       id: 1,
       category: "Frontend",
-      items: ["React", "JavaScript", "HTML/CSS", "Tailwind CSS", "Vue.js"]
+      items: ["React", "JavaScript", "HTML/CSS", "Tailwind CSS", "Next.js"]
     },
     {
       id: 2,

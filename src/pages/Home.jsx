@@ -1,81 +1,122 @@
-import React from 'react';
-import { portfolioData } from '../data/data';
-import Button from '../components/common/Button';
-import heroImage from '../images/hero-bg.svg';
+import React from 'react'
+import { portfolioData } from '../data/data'
+import Button from '../components/common/Button'
 
-const HomePage = () => {
-  const { hero } = portfolioData;
-
-  const heroStyle = {
-    minHeight: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    position: 'relative',
-    overflow: 'hidden',
-    color: '#fff',
-    textAlign: 'center'
-  };
-
-  const containerStyle = {
-    position: 'relative',
-    zIndex: 10,
-    maxWidth: '800px',
-    padding: '40px 20px'
-  };
-
-  const titleStyle = {
-    fontSize: '64px',
-    fontWeight: '700',
-    marginBottom: '20px',
-    textShadow: '0 2px 10px rgba(0, 0, 0, 0.3)',
-    letterSpacing: '-1px'
-  };
-
-  const subtitleStyle = {
-    fontSize: '32px',
-    fontWeight: '500',
-    marginBottom: '20px',
-    opacity: 0.95
-  };
-
-  const descriptionStyle = {
-    fontSize: '18px',
-    marginBottom: '40px',
-    lineHeight: '1.6',
-    opacity: 0.9
-  };
-
-  const decorativeStyle = {
-    position: 'absolute',
-    borderRadius: '50%',
-    filter: 'blur(40px)',
-    opacity: 0.3,
-    animation: 'float 6s ease-in-out infinite'
-  };
-
+const Home = () => {
   return (
     <>
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(20px); }
-        }
-      `}</style>
-      <section style={heroStyle}>
-        <div style={{ ...decorativeStyle, width: '300px', height: '300px', background: '#fff', top: '20%', left: '10%' }} />
-        <div style={{ ...decorativeStyle, width: '300px', height: '300px', background: '#fff', bottom: '20%', right: '10%' }} />
-        
-        <div style={containerStyle}>
-          <h1 style={titleStyle}>{hero.title}</h1>
-          <h2 style={subtitleStyle}>{hero.subtitle}</h2>
-          <p style={descriptionStyle}>{hero.description}</p>
-          <Button text={hero.cta} variant="secondary" />
+      <style>
+        {`
+
+          .hero {
+            position: relative;
+            height: 100vh;
+
+            background-image: url('src/images/hero-bg.svg');
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 80px;
+
+            overflow: hidden;
+          }
+
+          /* Dark + Blur Overlay */
+          .hero-overlay {
+            position: absolute;
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.6);
+
+            backdrop-filter: blur(4px);
+          }
+
+          /* Text Content */
+          .hero-content {
+            position: relative;
+            z-index: 2;
+
+            color: white;
+
+            max-width: 700px;
+          }
+
+          .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+
+            font-weight: bold;
+          }
+
+          .hero-content h2 {
+            font-size: 2rem;
+
+            color: #00bcd4;
+
+            margin-bottom: 20px;
+          }
+
+          .hero-content p {
+            font-size: 1.1rem;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+
+            color: #ddd;
+          }
+
+          /* Mobile Responsive */
+          @media(max-width: 768px){
+
+            .hero{
+              padding: 0 30px;
+            }
+
+            .hero-content h1{
+              font-size: 2.5rem;
+            }
+
+            .hero-content h2{
+              font-size: 1.5rem;
+            }
+
+            .hero-content p{
+              font-size: 1rem;
+            }
+
+          }
+
+        `}
+      </style>
+
+      <section className="hero">
+
+        {/* Overlay */}
+        <div className="hero-overlay"></div>
+
+        {/* Content */}
+        <div className="hero-content">
+
+          <h1>{portfolioData.hero.title}</h1>
+
+          <h2>{portfolioData.hero.subtitle}</h2>
+
+          <p>{portfolioData.hero.description}</p>
+
+          <Button text="Download CV" variant='primary' style={{ marginRight: '20px' }} />
+          <a href="#projects">
+          <Button text="View My Work" variant="secondary" />
+          </a>
+
         </div>
+
       </section>
     </>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default Home
