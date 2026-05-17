@@ -57,7 +57,7 @@ portfolioData = {
 
 Components import and use this data:
 ```javascript
-import { portfolioData } from '../../data/data';
+import { portfolioData } from '../data/data';
 const { skills } = portfolioData;
 ```
 
