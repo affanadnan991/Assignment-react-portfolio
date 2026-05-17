@@ -5,7 +5,8 @@ export const portfolioData = {
     subtitle: "Full Stack Developer",
     description: "Passionate about creating amazing web experiences",
     cta: "View My Work",
-    image: "/images/hero-bg.svg"
+    image: "/images/hero-bg.svg",
+    cv: "/files/affan-cv.pdf"
   },
 
   skills: [

@@ -106,11 +106,12 @@ const Home = () => {
           <h2>{portfolioData.hero.subtitle}</h2>
 
           <p>{portfolioData.hero.description}</p>
-
-          <Button text="Download CV" variant='primary' style={{ marginRight: '20px' }} />
+<div className="btns" style={{gap: '20px'}}>
+          <Button text="Download CV" variant='primary' onClick={() => window.open(portfolioData.hero.cv)} style={{marginRight: '10px'}} disabled />
           <a href="#projects">
-          <Button text="View My Work" variant="secondary" />
+          <Button text="View My Work" variant="secondary" style={{marginLeft: '10px'}} />
           </a>
+          </div>
 
         </div>
 
